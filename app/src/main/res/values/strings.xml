@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meracast</string>
+    <string name="home_title">Choose Protocol</string>
+    <string name="home_subtitle">Select how you want to connect</string>
+    <string name="protocol_miracast_title">Miracast / Screen Mirror</string>
+    <string name="protocol_miracast_desc">Broadcast or receive your screen. Compatible with Windows+K, smart TVs, and other Miracast devices. Uses Wi‑Fi Direct or same-network streaming.</string>
+    <string name="protocol_media_title">Meracast Media Stream</string>
+    <string name="protocol_media_desc">Stream movies, music, and files between Meracast devices. Supports seeking, pause/resume, volume control, and adaptive buffering.</string>
+    <string name="media_source_mode">Send Media</string>
+    <string name="media_sink_mode">Receive Media</string>
+    <string name="media_select_file">Select a media file to stream</string>
+    <string name="media_no_files">No media files found on this device</string>
+    <string name="media_connect_to">Connect to a device to stream</string>
+    <string name="media_now_playing">Now Playing</string>
+    <string name="media_play">Play</string>
+    <string name="media_pause">Pause</string>
+    <string name="media_stop">Stop</string>
+    <string name="media_seek">Seek</string>
+    <string name="media_buffering">Buffering…</string>
+    <string name="media_cast_screen">Cast Screen</string>
+    <string name="media_cast_receive">Receive Cast</string>
+    <string name="media_cast_starting">Starting screen cast…</string>
+    <string name="media_cast_active">Casting screen…</string>
+    <string name="media_cast_stop">Stop Casting</string>
+    <string name="media_cast_request">Request screen capture permission</string>
+    <string name="mode_source">Send Screen</string>
+    <string name="mode_sink">Receive Screen</string>
+    <string name="discovering">Discovering devices…</string>
+    <string name="no_devices">No Miracast devices found nearby</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connecting">Connecting…</string>
+    <string name="streaming">Streaming</string>
+    <string name="stop">Stop</string>
+    <string name="start_source">Start Casting</string>
+    <string name="start_sink">Start Receiving</string>
+    <string name="permission_screen_capture">Screen capture permission required</string>
+    <string name="permission_audio">Microphone permission required for audio</string>
+    <string name="permission_location">Location permission required for Wi-Fi Direct discovery</string>
+    <string name="audio_enabled">Audio On</string>
+    <string name="audio_disabled">Audio Off</string>
+    <string name="status_idle">Idle</string>
+    <string name="status_discovering">Scanning for devices…</string>
+    <string name="status_connecting">Negotiating connection…</string>
+    <string name="status_streaming">Streaming active</string>
+</resources>

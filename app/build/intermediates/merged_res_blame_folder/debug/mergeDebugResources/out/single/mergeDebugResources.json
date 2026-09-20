@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-debug-41:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-debug-41:/layout_activity_media.xml.flat",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/layout/activity_media.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-debug-41:/layout_activity_home.xml.flat",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/layout/activity_home.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-debug-41:/drawable_toggle_bg.xml.flat",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/drawable/toggle_bg.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-debug-41:/drawable_device_card_bg.xml.flat",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/drawable/device_card_bg.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-debug-41:/layout_activity_main.xml.flat",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-debug-41:/layout_item_device.xml.flat",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/layout/item_device.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-debug-41:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.meracast.app-debug-41:/layout_activity_media.xml.flat",
+        "source": "com.meracast.app-main-43:/layout/activity_media.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-debug-41:/drawable_ic_launcher_background.xml.flat",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/drawable/ic_launcher_background.xml"
+    }
+]

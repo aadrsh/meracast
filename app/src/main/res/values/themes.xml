@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Material 3 (Material You) theme — Google's well-documented design system.
+        See: https://m3.material.io/
+        DayNight variant auto-switches between light + dark themes.
+    -->
+    <style name="Theme.Meracast" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- ── Primary brand ────────────────────────────────── -->
+        <item name="colorPrimary">@color/m3_primary</item>
+        <item name="colorOnPrimary">@color/m3_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_on_primary_container</item>
+
+        <!-- ── Secondary brand ──────────────────────────────── -->
+        <item name="colorSecondary">@color/m3_secondary</item>
+        <item name="colorOnSecondary">@color/m3_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_on_secondary_container</item>
+
+        <!-- ── Tertiary accent ──────────────────────────────── -->
+        <item name="colorTertiary">@color/m3_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_on_tertiary</item>
+
+        <!-- ── Error ─────────────────────────────────────────── -->
+        <item name="colorError">@color/m3_error</item>
+        <item name="colorOnError">@color/m3_on_error</item>
+        <item name="colorErrorContainer">@color/m3_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_on_error_container</item>
+
+        <!-- ── Background / Surface ─────────────────────────── -->
+        <item name="android:colorBackground">@color/m3_background</item>
+        <item name="colorOnBackground">@color/m3_on_background</item>
+        <item name="colorSurface">@color/m3_surface</item>
+        <item name="colorOnSurface">@color/m3_on_surface</item>
+        <item name="colorSurfaceVariant">@color/m3_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
+
+        <!-- ── Outline / divider ────────────────────────────── -->
+        <item name="colorOutline">@color/m3_outline</item>
+        <item name="colorOutlineVariant">@color/m3_outline_variant</item>
+
+        <!-- ── Status bar ───────────────────────────────────── -->
+        <item name="android:statusBarColor">@color/m3_primary</item>
+        <item name="android:navigationBarColor">@color/m3_surface</item>
+
+    </style>
+</resources>

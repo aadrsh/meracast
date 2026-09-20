@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/m3_background">
+
+    <!-- ═══ Top bar ═══ -->
+    <LinearLayout
+        android:id="@+id/media_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:background="@color/m3_primary">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/media_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/protocol_media_title"
+            android:textColor="@color/m3_on_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:id="@+id/media_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status_idle"
+            android:textColor="@color/m3_on_primary"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- ═══ Mode selector ═══ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:background="@color/m3_surface">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_source_mode"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/media_source_mode"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sink_mode"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/media_sink_mode"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- ═══ Source panel: Broadcast → Pair → Browse ═══ -->
+    <FrameLayout
+        android:id="@+id/media_source_panel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Broadcast button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_broadcast"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Start Broadcasting"
+                android:textSize="14sp"
+                android:textAllCaps="false"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_share"
+                style="@style/Widget.Material3.Button.TonalButton" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/m3_outline_variant"
+                android:layout_marginVertical="12dp" />
+
+            <!-- File list (shown after pairing, for user to pick a file to serve) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/media_select_file"
+                android:textSize="14sp"
+                android:textColor="@color/m3_on_surface_variant"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/media_file_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/media_no_files_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/media_no_files"
+                android:textColor="@color/m3_on_surface_variant"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- ═══ Sink panel: Discover → Pair → Browse ═══ -->
+    <FrameLayout
+        android:id="@+id/media_sink_panel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/media_connect_to"
+                android:textSize="14sp"
+                android:textColor="@color/m3_on_surface_variant"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/media_device_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/media_no_devices_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/no_devices"
+                android:textColor="@color/m3_on_surface_variant"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <!-- Receive Cast button (shown after pairing) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_receive_cast"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/media_cast_receive"
+                android:textSize="14sp"
+                android:textAllCaps="false"
+                app:cornerRadius="12dp"
+                android:layout_marginTop="8dp"
+                app:icon="@android:drawable/ic_menu_gallery"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:visibility="gone" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- ═══ Pairing panel (shared, shown after HELLO handshake) ═══ -->
+    <FrameLayout
+        android:id="@+id/media_pairing_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:padding="12dp"
+        android:background="@color/m3_primary_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/media_paired_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/m3_on_primary_container"
+                android:text="Paired with" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/m3_on_primary_container"
+                android:alpha="0.8"
+                android:layout_marginTop="2dp"
+                android:text="Files will appear below" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- ═══ Video surface + controls (during playback) ═══ -->
+    <FrameLayout
+        android:id="@+id/media_player_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:background="@color/dark_surface">
+
+        <SurfaceView
+            android:id="@+id/media_surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Playback controls overlay -->
+        <LinearLayout
+            android:id="@+id/media_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#99000000"
+            android:gravity="center"
+            android:layout_gravity="bottom">
+
+            <!-- Seek bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/media_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0:00"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <SeekBar
+                    android:id="@+id/media_seek_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="8dp"
+                    android:max="1000" />
+
+                <TextView
+                    android:id="@+id/media_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0:00"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Buttons row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="4dp">
+
+                <ImageButton
+                    android:id="@+id/btn_play_pause"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/ic_media_play"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Play/Pause" />
+
+                <ImageButton
+                    android:id="@+id/btn_stop"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Stop"
+                    android:layout_marginStart="16dp" />
+
+                <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/media_buffer_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- ═══ Log overlay ═══ -->
+    <com.meracast.ui.DebugLogOverlayView
+        android:id="@+id/media_log_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:clickable="false" />
+
+</LinearLayout>

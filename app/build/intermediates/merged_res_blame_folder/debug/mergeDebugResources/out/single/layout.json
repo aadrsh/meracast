@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-mergeDebugResources-40:/layout/activity_media.xml",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/layout/activity_media.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-mergeDebugResources-40:/layout/activity_home.xml",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/layout/activity_home.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-mergeDebugResources-40:/layout/item_device.xml",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/layout/item_device.xml"
+    },
+    {
+        "merged": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-mergeDebugResources-40:/layout/activity_main.xml",
+        "source": "/home/aadrshbajpai/.gradle/daemon/8.9/com.meracast.app-main-43:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.meracast.app-mergeDebugResources-40:/layout/activity_media.xml",
+        "source": "com.meracast.app-main-43:/layout/activity_media.xml"
+    }
+]

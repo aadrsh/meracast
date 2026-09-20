@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Wi-Fi signal icon representation -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,30 C40,30 28,35.6 18,45 L22,49 C30.4,40.8 40.7,36 54,36 C67.3,36 77.6,40.8 86,49 L90,45 C80,35.6 68,30 54,30Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,42 C44.7,42 36.2,45.9 29.8,52.2 L33.8,56.2 C38.8,51.2 45.9,48 54,48 C62.1,48 69.2,51.2 74.2,56.2 L78.2,52.2 C71.8,45.9 63.3,42 54,42Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,54 C48.4,54 43.4,56.2 39.6,60 L43.6,64 C46.4,61.2 50,59.8 54,59.8 C58,59.8 61.6,61.2 64.4,64 L68.4,60 C64.6,56.2 59.6,54 54,54Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,66 C51.4,66 49.2,66.8 47.4,68.2 L54,78 L60.6,68.2 C58.8,66.8 56.6,66 54,66Z" />
+</vector>

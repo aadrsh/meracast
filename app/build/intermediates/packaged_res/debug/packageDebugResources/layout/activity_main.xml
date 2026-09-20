@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- ═══ Top bar ═══ -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:background="@color/primary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textColor="@color/on_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status_idle"
+            android:textColor="@color/on_primary"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- ═══ Mode switch — two rows ═══ -->
+    <LinearLayout
+        android:id="@+id/mode_selector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/surface"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Row 1: mode + toggles -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Receive"
+                android:textColor="@color/on_surface"
+                android:textSize="14sp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/mode_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:checked="false"
+                android:track="@drawable/toggle_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:textColor="@color/on_surface"
+                android:textSize="14sp" />
+
+            <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+
+            <!-- HUD toggle -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/debug_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:switchMinWidth="28dp"
+                android:track="@drawable/toggle_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HUD"
+                android:textSize="12sp"
+                android:textColor="@color/on_surface"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Logs toggle -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/log_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:switchMinWidth="28dp"
+                android:track="@drawable/toggle_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logs"
+                android:textSize="12sp"
+                android:textColor="@color/on_surface"
+                android:layout_marginStart="2dp" />
+        </LinearLayout>
+
+        <!-- Row 2: receiving mode chips -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Receive via:"
+                android:textSize="11sp"
+                android:textColor="@color/m3_on_surface_variant" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/receive_mode_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                app:checkedChip="@id/chip_network">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_network"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:text="Network"
+                    android:textSize="11sp"
+                    android:checked="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_direct"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:text="Direct"
+                    android:textSize="11sp" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ═══ Video surface (SINK mode) ═══ -->
+    <FrameLayout
+        android:id="@+id/preview_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/dark_surface"
+        app:layout_constraintTop_toBottomOf="@id/mode_selector"
+        app:layout_constraintBottom_toTopOf="@id/controls_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <SurfaceView
+            android:id="@+id/preview_surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <!-- Debug stats overlay drawn on top of the preview -->
+        <com.meracast.ui.DebugOverlayView
+            android:id="@+id/debug_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:clickable="false" />
+
+        <!-- Debug log overlay drawn on top of the preview -->
+        <com.meracast.ui.DebugLogOverlayView
+            android:id="@+id/debug_log_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:clickable="false" />
+    </FrameLayout>
+
+    <!-- ═══ Device list (SOURCE mode) ═══ -->
+    <ScrollView
+        android:id="@+id/device_list_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/mode_selector"
+        app:layout_constraintBottom_toTopOf="@id/controls_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/discovery_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_idle"
+                android:textColor="@color/on_background"
+                android:textSize="14sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/no_devices_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_devices"
+                android:textColor="@color/on_background"
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:padding="32dp" />
+
+            <LinearLayout
+                android:id="@+id/device_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ═══ Controls bar ═══ -->
+    <LinearLayout
+        android:id="@+id/controls_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="@color/surface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/audio_enabled"
+                android:textColor="@color/on_surface"
+                android:textSize="16sp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/audio_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:track="@drawable/toggle_bg" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/action_button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/start_sink"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            app:cornerRadius="12dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Material 3 colour palette — dark theme.
+        Automatically applied by DayNight when the system is in dark mode.
+        Ref: https://m3.material.io/styles/color/dark-color-scheme
+    -->
+
+    <!-- Primary — darker variant on dark surfaces -->
+    <color name="m3_primary">#FF8BB3FF</color>
+    <color name="m3_on_primary">#FF00315F</color>
+    <color name="m3_primary_container">#FF00497D</color>
+    <color name="m3_on_primary_container">#FFD3E3FF</color>
+
+    <!-- Secondary -->
+    <color name="m3_secondary">#FF8DD99C</color>
+    <color name="m3_on_secondary">#FF003919</color>
+    <color name="m3_secondary_container">#FF005226</color>
+    <color name="m3_on_secondary_container">#FFCEE9D2</color>
+
+    <!-- Tertiary -->
+    <color name="m3_tertiary">#FFE5B73F</color>
+    <color name="m3_on_tertiary">#FF423000</color>
+
+    <!-- Error -->
+    <color name="m3_error">#FFF2B8B5</color>
+    <color name="m3_on_error">#FF601410</color>
+    <color name="m3_error_container">#FF8C1D18</color>
+    <color name="m3_on_error_container">#FFF9DEDC</color>
+
+    <!-- Background & Surface (dark) -->
+    <color name="m3_background">#FF1C1B1F</color>
+    <color name="m3_on_background">#FFE6E1E6</color>
+    <color name="m3_surface">#FF1C1B1F</color>
+    <color name="m3_on_surface">#FFE6E1E6</color>
+    <color name="m3_surface_variant">#FF44474F</color>
+    <color name="m3_on_surface_variant">#FFC4C6D0</color>
+
+    <!-- Outline / Divider -->
+    <color name="m3_outline">#FF8E9099</color>
+    <color name="m3_outline_variant">#FF44474F</color>
+
+    <!-- ── App-specific colours (dark variants) ─────────────── -->
+    <color name="status_green">#FF81C784</color>
+    <color name="status_red">#FFEF5350</color>
+    <color name="status_yellow">#FFFFCA28</color>
+    <color name="dark_surface">#FF121217</color>
+
+    <!-- Legacy aliases — map to M3 dark values -->
+    <color name="primary">@color/m3_primary</color>
+    <color name="on_primary">@color/m3_on_primary</color>
+    <color name="secondary">@color/m3_secondary</color>
+    <color name="on_secondary">@color/m3_on_secondary</color>
+    <color name="background">@color/m3_background</color>
+    <color name="on_background">@color/m3_on_background</color>
+    <color name="surface">@color/m3_surface</color>
+    <color name="on_surface">@color/m3_on_surface</color>
+    <color name="error">@color/m3_error</color>
+</resources>

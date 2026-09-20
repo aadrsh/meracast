@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        Switch track background — Material 3 dynamic colours.
+        ON state uses primary brand colour.
+        OFF state uses surface variant (neutral grey that adapts with the theme).
+    -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/m3_primary" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/m3_surface_variant" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</selector>
